@@ -31,6 +31,8 @@ class PasswordResetsController < ApplicationController
       log_in @user
       flash[:success] = "Password has been reset."
       redirect_to @user
+    else
+      render 'edit',status: :unprocessable_entity
     end
   end
   
